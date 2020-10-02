@@ -119,7 +119,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"main.js":[function(require,module,exports) {
 var div = document.querySelector('.demo');
-var string = '大家好，我叫隋鑫，目前正在寻找前端开发岗位！';
+var string = "\u5927\u5BB6\u597D\uFF0C\u6211\u53EB\u968B\u946B\uFF0C \n  \u76EE\u524D\u6B63\u5728\u5BFB\u627E\u524D\u7AEF\u5F00\u53D1\u5C97\u4F4D\uFF01";
+string = string.replace(/\n/g, '<br>');
 var n = 0;
 div.innerHTML = string.substring(0, n);
 
@@ -129,7 +130,6 @@ var step = function step() {
       n += 1;
       div.innerHTML = string.substring(0, n);
       step();
-      console.log(n);
     }
   }, 100);
 };
