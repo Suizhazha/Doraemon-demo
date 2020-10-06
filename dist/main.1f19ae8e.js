@@ -118,23 +118,20 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-var div = document.querySelector('.demo');
-var string = "\u5927\u5BB6\u597D\uFF0C\u6211\u53EB\u968B\u946B\uFF0C \n  \u76EE\u524D\u6B63\u5728\u5BFB\u627E\u524D\u7AEF\u5F00\u53D1\u5C97\u4F4D\uFF01";
-string = string.replace(/\n/g, '<br>');
 var n = 0;
-div.innerHTML = string.substring(0, n);
+var string = "21314";
+demo.innerHTML = string.substring(0, n);
+var id = setInterval(function () {
+  n += 1;
 
-var step = function step() {
-  setTimeout(function () {
-    if (n < string.length) {
-      n += 1;
-      div.innerHTML = string.substring(0, n);
-      step();
-    }
-  }, 100);
-};
+  if (n > string.length) {
+    window.clearInterval(id);
+    return;
+  }
 
-step();
+  console.log(n);
+  demo.innerHTML = string.substring(0, n);
+}, 200);
 },{}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -163,7 +160,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50480" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59285" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
